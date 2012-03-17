@@ -1,0 +1,14 @@
+Source: #PACKAGE#
+Section: misc
+Priority: extra
+Maintainer: Pantelis Koukousoulas <pktoss@gmail.com>
+Build-Depends: #BUILD_DEPS#
+Standards-Version: 3.9.3
+Homepage: http://github.com/pkt/pkt-script-packages
+#Vcs-Git: http://github.com/pkt/pkt-script-packages
+
+Package: #PACKAGE#
+Architecture: all
+Depends: ${misc:Depends}
+Description: Script package
+ This package has installed various scripts.

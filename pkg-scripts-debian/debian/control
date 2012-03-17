@@ -1,0 +1,14 @@
+Source: pkg-scripts-debian
+Section: misc
+Priority: extra
+Maintainer: Pantelis Koukousoulas <pktoss@gmail.com>
+Build-Depends: debhelper (>= 8.0.0)
+Standards-Version: 3.9.3
+Homepage: http://github.com/pkt/pkt-script-packages
+#Vcs-Git: http://github.com/pkt/pkt-script-packages
+
+Package: pkg-scripts-debian
+Architecture: all
+Depends: ${misc:Depends}
+Description: Script package
+ This package has installed various scripts.

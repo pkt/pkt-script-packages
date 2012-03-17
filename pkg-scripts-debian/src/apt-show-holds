@@ -1,0 +1,5 @@
+#!/bin/bash
+set -e
+
+# And another one-liner
+dpkg --get-selections | grep hold | sed 's/hold//'

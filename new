@@ -1,0 +1,52 @@
+#!/bin/bash
+# -------------------------------------------------------------------- #
+# Syntax: ./new <pkg-scripts-foo>                                      #
+#    Will construct a good "skeleton package" which you can then edit  #
+#    to add the scripts you want it to contain and their manpages      #
+# -------------------------------------------------------------------- #
+set -e
+
+pakname=${1}
+username=${1##pkg-scripts-}
+distro=`lsb_release -cs`
+dir=${PWD}
+
+mkdir ${pakname}
+cd ${pakname}
+dh_make -s --native --templates ${dir}/templates -c bsd \
+        -p ${pakname}_1.0 --rulesformat dh7
+rm -f debian/{*.ex,*.EX,README*,changelog,docs}
+sed -i 's,<url://example.com>,http://github.com/pkt/pkt-script-packages,g' debian/copyright
+sed -i '4,8d'                      debian/copyright
+sed -i '/^# Please also look/d'    debian/copyright
+sed -i '/^# different copyright/d' debian/copyright
+
+dch --create --package ${pakname} --newversion 1.0 --distribution ${distro}
+sed -i 's/ (Closes.*$//' debian/changelog
+
+mkdir src doc
+
+cat > debian/${pakname}.manpages << EOF
+doc/*.1
+EOF
+
+cat > Makefile << EOF
+all: man
+
+man:
+	@set -e ; cd doc ; make
+
+install:
+	install -d \$(DESTDIR)/usr/bin
+	install src/* \$(DESTDIR)/usr/bin
+EOF
+
+cat > doc/Makefile << EOF
+podpages=\$(wildcard *.pod)
+manpages=\$(patsubst %.pod,%.1,\$(podpages))
+
+all: \$(manpages)
+
+%.1: %.pod
+	pod2man --center="${pakname}" --release="${pakname} 1.0" \$< > \$@
+EOF

@@ -1,0 +1,5 @@
+#!/bin/bash
+set -e
+
+# Just an one-liner :)
+grep 'Origin:' /var/lib/apt/lists/*Release | sed 's,.*Origin: ,,' | sort -u

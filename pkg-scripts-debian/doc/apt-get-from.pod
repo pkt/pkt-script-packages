@@ -1,0 +1,23 @@
+=encoding utf8
+
+=head1 NAME
+
+apt-get-from - Install a package (and its dependencies) from a specific source
+
+=head1 SYNOPSIS
+
+  apt-get-from <source> <package>
+
+=head1 DESCRIPTION
+
+This is a very useful shortcut in case you want to install a package from one
+of your low-priority repositories (e.g., medibuntu or getdeb). This command
+will install the package you specify and its dependencies from the source
+that you specify.
+
+In order to see which sources you have available you can use the script
+B<apt-show-sources(1)> also provided from the same package.
+
+=head1 SEE ALSO
+
+L<apt-show-sources(1)>

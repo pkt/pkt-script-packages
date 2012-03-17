@@ -1,0 +1,20 @@
+=encoding utf8
+
+=head1 NAME
+
+apt-hold - put a debian package on hold
+
+=head1 SYNOPSIS
+
+  apt-hold <package>
+
+=head1 DESCRIPTION
+
+Puts a package on hold (prevents it from being upgraded).
+
+Note that this command doesn't need to be ran with sudo, it will use
+sudo internally as needed.
+
+=head1 SEE ALSO
+
+L<apt-unhold(1)>

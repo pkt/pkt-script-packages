@@ -1,0 +1,5 @@
+pkg-scripts-debian (1.0) precise; urgency=low
+
+  * Initial release.
+
+ -- Pantelis Koukousoulas <pktoss@gmail.com>  Fri, 16 Mar 2012 19:52:09 +0200

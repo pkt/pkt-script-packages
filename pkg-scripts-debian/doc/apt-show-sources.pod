@@ -1,0 +1,24 @@
+=encoding utf8
+
+=head1 NAME
+
+apt-show-sources - Show the package sources available
+
+=head1 SYNOPSIS
+
+  apt-show-sources
+
+=head1 DESCRIPTION
+
+Displays a list of package sources available on the system. This is
+useful in case you have several "extra" sources like medibuntu, getdeb
+etc that you have pinned to a low priority (so that you can only install
+packages from them explicitly.
+
+You can use any one of the sources that this command displays to install
+packages with the B<apt-get-from(1)> script (also available from this
+package).
+
+=head1 SEE ALSO
+
+L<apt-get-from(1)>

@@ -1,0 +1,21 @@
+=encoding utf8
+
+=head1 NAME
+
+apt-unhold - allows a package to be upgraded
+
+=head1 SYNOPSIS
+
+  apt-unhold <package>
+
+=head1 DESCRIPTION
+
+Allows a package to be upgraded by removing the I<hold> put on it previously
+by the user.
+
+Note that this command doesn't need to be ran with sudo, it will use
+sudo internally as needed.
+
+=head1 SEE ALSO
+
+L<apt-hold(1)>

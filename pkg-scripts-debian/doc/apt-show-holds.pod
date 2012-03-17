@@ -1,0 +1,17 @@
+=encoding utf8
+
+=head1 NAME
+
+apt-show-holds - Show which packages are on hold
+
+=head1 SYNOPSIS
+
+  apt-show-holds
+
+=head1 DESCRIPTION
+
+Show which packages are "on hold" thus being prevented from upgrade.
+
+=head1 SEE ALSO
+
+L<apt-hold(1)> L<apt-unhold(1)>

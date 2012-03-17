@@ -1,0 +1,5 @@
+#!/bin/bash
+set -e
+
+# Another one-liner :)
+apt-get install -t -o=${1} ${2}
